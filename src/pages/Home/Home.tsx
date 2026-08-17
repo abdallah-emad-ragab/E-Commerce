@@ -1,5 +1,7 @@
 export default function Home() {
     return (
-        <div>Home</div>
+        <section className="container my-4">
+            <h1>Home</h1>
+        </section>
     )
 }
