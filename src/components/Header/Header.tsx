@@ -8,9 +8,11 @@ export default function Header() {
     const { currentUser } = useAppSelector((state) => state.auth);
     const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
 
-    // Total quantity calculation for cart items
+    // Total quantity for cart items
     const cartItems = useAppSelector((state) => state.cart.items);
-    const totalQuantity = Object.values(cartItems).reduce((total, quantity) => total + quantity, 0);
+    const totalCartQuantity = Object.values(cartItems).reduce((total, quantity) => total + quantity, 0);
+
+    const wishlistItems = useAppSelector((state) => state.wishlist.itemsId);    
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
@@ -44,9 +46,14 @@ export default function Header() {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
                         {/* Wishlist Icon */}
                         <li className="nav-item">
-                            <NavLink to="/whishlist" className={({ isActive }) => isActive ? "nav-link active fs-5" : "nav-link fs-5"}
+                            <NavLink to="/whishlist" className={({ isActive }) => isActive ? "nav-link active position-relative fs-5" : "nav-link position-relative fs-5"}
                                 title="Wishlist">
                                 <i className="bi bi-heart" />
+                                {wishlistItems.length > 0 && (
+                                    <span className="position-absolute top-1 end-0 translate-middle badge rounded-pill bg-danger" style={{fontSize: "14px"}}>
+                                        {wishlistItems.length}
+                                    </span>
+                                )}
                             </NavLink>
                         </li>
 
@@ -55,9 +62,9 @@ export default function Header() {
                             <NavLink to="/cart" className={({ isActive }) => isActive ? "nav-link active position-relative fs-5" : "nav-link position-relative fs-5"}
                                 title="Cart">
                                 <i className="bi bi-cart3" />
-                                {totalQuantity > 0 && (
-                                    <span className="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger fs-6">
-                                        {totalQuantity}
+                                {totalCartQuantity > 0 && (
+                                    <span className="position-absolute top-1 end-0 translate-middle badge rounded-pill bg-danger" style={{fontSize: "14px"}}>
+                                        {totalCartQuantity}
                                     </span>
                                 )}
                             </NavLink>
