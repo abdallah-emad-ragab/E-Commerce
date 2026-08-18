@@ -18,12 +18,12 @@ export default function Products() {
             <h1 className="text-center mb-4">Products</h1>
 
             {/* Search & Filter */}
-            <div className="row mb-4">
-                <div className="col-md-6">
+            <div className="row g-2 mb-4">
+                <div className="col-sm-12 col-md-8">
                     <input type="text" className="form-control" placeholder="Search products..."
                         value={search} onChange={(e) => setSearch(e.target.value)} />
                 </div>
-                <div className="col-md-6">
+                <div className="col-sm-12 col-md-4">
                     <select className="form-select" value={filter} onChange={(e) => setFilter(e.target.value)}>
                         <option selected value="">All Categories</option>
                         {[...new Set(products.map((product) => product.cat_prefix))].map((cat_prefix) => (
@@ -60,7 +60,7 @@ export default function Products() {
                                     </div>
 
                                     <div className="d-grid gap-2">
-                                        <Link to={`/products/${product.id}`} className="btn btn-outline-dark btn-sm">
+                                        <Link to={`/products/${product.id}`} className="btn btn-outline-secondary btn-sm">
                                             View Details
                                         </Link>
                                         <button className="btn btn-primary btn-sm">

@@ -6,6 +6,7 @@ import { toggleTheme } from "../../store/theme/themeSlice";
 export default function Header() {
     const dispatch = useAppDispatch();
     const { currentUser } = useAppSelector((state) => state.auth);
+    const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
 
     // Total quantity calculation for cart items
     const cartItems = useAppSelector((state) => state.cart.items);
@@ -43,7 +44,7 @@ export default function Header() {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
                         {/* Wishlist Icon */}
                         <li className="nav-item">
-                            <NavLink to="/wishlist" className={({ isActive }) => isActive ? "nav-link active fs-5" : "nav-link fs-5"}
+                            <NavLink to="/whishlist" className={({ isActive }) => isActive ? "nav-link active fs-5" : "nav-link fs-5"}
                                 title="Wishlist">
                                 <i className="bi bi-heart" />
                             </NavLink>
@@ -68,7 +69,7 @@ export default function Header() {
                                 title="Toggle Theme"
                                 onClick={() => dispatch(toggleTheme())}
                             >
-                                <i className="bi bi-moon-stars" />
+                                {isDarkMode ? <i className="bi bi-brightness-high-fill" /> : <i className="bi bi-moon-stars-fill" />}
                             </button>
                         </li>
 

@@ -3,7 +3,7 @@ import Header from "./components/Header/Header"
 import Home from "./pages/Home/Home"
 import Products from "./pages/Products/Products";
 import Cart from "./pages/Cart/Cart";
-import Whishlist from "./pages/Home/Whishlist/Whishlist";
+import Whishlist from "./pages/Whishlist/Whishlist";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";

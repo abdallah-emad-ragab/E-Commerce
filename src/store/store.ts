@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import themeSlice from "./theme/themeSlice";
 import authSlice from "./auth/authSlice";
 import cartSlice from "./cart/cartSlice";
+import wishlistSlice from "./wishlist/wishlistSlice";
 
 export const store = configureStore({
     reducer: {
         theme: themeSlice,
         auth: authSlice,
-        cart: cartSlice
+        cart: cartSlice,
+        wishlist: wishlistSlice
     },
 });
 

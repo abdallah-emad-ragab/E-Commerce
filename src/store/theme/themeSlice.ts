@@ -8,7 +8,7 @@ if (savedTheme) {
     document.documentElement.setAttribute("data-bs-theme", "light");
 }
 
-export const themeSlice = createSlice({
+const themeSlice = createSlice({
     name: "theme",
     initialState: {
         isDarkMode: savedTheme
