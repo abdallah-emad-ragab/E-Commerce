@@ -15,7 +15,7 @@ export default function Header() {
     const wishlistItems = useAppSelector((state) => state.wishlist.itemsId);    
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top">
             <div className="container">
                 {/* Brand Logo */}
                 <Link className="navbar-brand fw-bold" to="/">

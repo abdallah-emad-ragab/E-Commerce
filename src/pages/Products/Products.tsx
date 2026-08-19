@@ -24,7 +24,7 @@ export default function Products() {
     });
 
     return (
-        <section className="container my-4">
+        <section className="container my-5 py-5">
             {/* Title */}
             <h1 className="text-center mb-4">Products</h1>
 
